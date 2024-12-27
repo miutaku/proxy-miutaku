@@ -9,6 +9,5 @@ services:
     restart: always
 
 networks:
-  default:
-    external:
-      name: myservice-proxy
+  myservice-proxy:
+    external: true
