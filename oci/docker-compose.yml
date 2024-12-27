@@ -7,6 +7,8 @@ services:
     environment:
       - TUNNEL_TOKEN=__CF_PVE_TUNNEL_TOKEN__
     restart: always
+    networks:
+      - myservice-proxy
 
 networks:
   myservice-proxy:
