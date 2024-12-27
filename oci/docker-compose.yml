@@ -2,6 +2,7 @@
 services:
   cloudflared:
     image: cloudflare/cloudflared
+    container_name: cloudflared
     command: tunnel run
     environment:
       - TUNNEL_TOKEN=__CF_PVE_TUNNEL_TOKEN__
