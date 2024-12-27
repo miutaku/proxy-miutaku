@@ -1,14 +1,21 @@
 ---
 services:
-  cloudflared:
+  pve-cloudflared:
     image: cloudflare/cloudflared
-    container_name: cloudflared
+    container_name: pve-cloudflared
     command: tunnel run
     environment:
       - TUNNEL_TOKEN=__CF_PVE_TUNNEL_TOKEN__
     restart: always
     networks:
       - myservice-proxy
+  networks-cloudflared:
+    image: cloudflare/cloudflared
+    container_name: networks-cloudflared
+    command: tunnel run
+    environment:
+      - TUNNEL_TOKEN=__CF_NETWORKS_TUNNEL_TOKEN__
+    restart: always
 
 networks:
   myservice-proxy:
