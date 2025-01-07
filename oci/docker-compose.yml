@@ -2,19 +2,19 @@
 services:
   pve-nuxbox-3-cloudflared:
     image: cloudflare/cloudflared
-    container_name: pve-cloudflared
+    container_name: pve-nuxbox-3-cloudflared
     command: tunnel run
     environment:
-      - TUNNEL_TOKEN=__CF_PVE_TUNNEL_TOKEN__
+      - TUNNEL_TOKEN=__CF_PVE_NUXBOX_3_TUNNEL_TOKEN__
     restart: always
     networks:
       - myservice-proxy
   pve-prodesk-cloudflared:
     image: cloudflare/cloudflared
-    container_name: networks-cloudflared
+    container_name: pve-prodesk-cloudflared
     command: tunnel run
     environment:
-      - TUNNEL_TOKEN=__CF_NETWORKS_TUNNEL_TOKEN__
+      - TUNNEL_TOKEN=__CF_PVE_PRODESK_TUNNEL_TOKEN__
     restart: always
     networks:
       - myservice-proxy
